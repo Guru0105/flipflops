@@ -42,15 +42,11 @@ All files are kept in a single directory for simplicity.
 Ensure Icarus Verilog and GTKWave are installed.
 
 ```bash
-<<<<<<< HEAD
-iverilog sr_latch.v sr_latch_tb.v -o sr_latch
-vvp sr_latch
-gtkwave sr_latch.vcd
-=======
+
 iverilog d_flop.v d_flop_tb.v -o d_flop
 vvp d_flop
 gtkwave d_flop.vcd
->>>>>>> cfdb7bc (updated Readme file)
+
 ```
 
 ## Learning Objectives
