@@ -1,32 +1,33 @@
-# SR Latch – Verilog
+# D Flip-Flop – Verilog
 
-This repository contains an SR (Set-Reset) Latch implemented in Verilog using gate-level modeling. The project includes a testbench for functional verification and simulation.
+This repository contains a D (Data) Flip-Flop implemented in Verilog HDL. The project includes a testbench for functional verification and simulation.
 
 ## Description
 
-* SR Latch implemented using Verilog HDL
-* Gate-level implementation using basic logic gates
-* Supports Set, Reset, Hold, and Invalid conditions
+* D Flip-Flop implemented using Verilog HDL
+* Captures input data on the active clock edge
+* Supports synchronous data storage
 * Testbench included for functional verification
-* Designed for learning digital logic and VLSI RTL design fundamentals
+* Designed for learning sequential logic and VLSI RTL design fundamentals
 
 ## Truth Table
 
-| S | R | Q(next) | Operation           |
-| - | - | ------- | ------------------- |
-| 0 | 0 | Hold    | No change           |
-| 0 | 1 | 0       | Reset               |
-| 1 | 0 | 1       | Set                 |
-| 1 | 1 | Invalid | Forbidden condition |
+| Clock          | D | Q(next) | Operation |
+| -------------- | - | ------- | --------- |
+| ↑              | 0 | 0       | Store 0   |
+| ↑              | 1 | 1       | Store 1   |
+| No active edge | X | Q       | Hold      |
+
+Here, `↑` represents the rising edge of the clock.
 
 ## Project Files
 
 All files are kept in a single directory for simplicity.
 
-* `sr_latch.v`
-  Verilog implementation of the SR Latch
+* `d_flop.v`
+  Verilog implementation of the D Flip-Flop
 
-* `sr_latch_tb.v`
+* `d_flop_tb.v`
   Testbench for functional verification
 
 ## Tools Used
@@ -41,18 +42,25 @@ All files are kept in a single directory for simplicity.
 Ensure Icarus Verilog and GTKWave are installed.
 
 ```bash
+<<<<<<< HEAD
 iverilog sr_latch.v sr_latch_tb.v -o sr_latch
 vvp sr_latch
 gtkwave sr_latch.vcd
+=======
+iverilog d_flop.v d_flop_tb.v -o d_flop
+vvp d_flop
+gtkwave d_flop.vcd
+>>>>>>> cfdb7bc (updated Readme file)
 ```
 
 ## Learning Objectives
 
 This project demonstrates:
 
-* Basic latch behavior
-* Set and Reset operations
-* Gate-level Verilog modeling
-* Feedback-based sequential logic
-* Functional simulation using Icarus Verilog and GTKWave
+* Edge-triggered sequential logic
+* Data storage using a D Flip-Flop
+* Positive-edge clocking
+* Non-blocking assignments in sequential logic
+* Functional verification using a Verilog testbench
+* Waveform analysis using GTKWave
 
