@@ -43,7 +43,7 @@ Ensure Icarus Verilog and GTKWave are installed.
 ```bash
 iverilog sr_latch.v sr_latch_tb.v -o sr_latch
 vvp sr_latch
-gtkwave sr_latch_wave.vcd
+gtkwave sr_latch.vcd
 ```
 
 ## Learning Objectives
